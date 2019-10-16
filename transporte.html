@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang = "es">
+
+<head>
+    <meta charset = "UTF-8">
+    <title>Mates</title>
+</head>
+
+<body>
+    <script>
+        var n;
+        var abono = 60;
+        var emp = "";
+        n=prompt('¿Que edad tiene?','');
+        emp=prompt('¿Esta empadronado? (y/n)');
+
+        if (n < 16) {
+            if (emp == "y") {
+                    abono = abono *0.7;
+                    abono = abono.toFixed(2);
+                }else{
+                    abono = abono *0.8;
+                    abono = abono.toFixed(2);
+                }
+            document.write("El importe del abono es de: " + abono);
+
+        }else{
+            if (n < 18) {
+                if (emp == "y") {
+                    abono = abono *0.80;
+                    abono = abono.toFixed(2);
+                }else{
+                    abono = abono *0.85;
+                    abono = abono.toFixed(2);
+                }
+                document.write("El importe del abono es de: " + abono);
+            } else{
+                if (n < 65) {
+                    document.write("El importe del abono es de: " + abono);
+                } else {
+                    if (n > 65) {
+                        if (emp == "y") {
+                    abono = abono *0.4;
+                    abono = abono.toFixed(2);
+                    }else{
+                        abono = abono *0.5;
+                        abono = abono.toFixed(2);
+                    }
+                        document.write("El importe del abono es de: " + abono);
+                    }else{
+                        if (n < 1) {
+                            document.write("No me trollees");
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
