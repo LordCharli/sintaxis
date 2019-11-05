@@ -1,7 +1,19 @@
 function reemplaza(parrafo,antigua,nueva){
 
-  parrafo = parrafo.replace(antigua,nueva);
+  var array = new Array();
+  var i = 0;
+  //var opt = false;
+  array = parrafo.split(" ");
 
+  while (i < array.length ) {
+    if (array[i] == antigua) {
+      array[i] = nueva;
+      //opt = true;
+    }
+    i++;
+  }
+
+  parrafo = array.join(" ");
   document.getElementById('texto').value = parrafo;
 }
 
