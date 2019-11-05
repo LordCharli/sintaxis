@@ -24,7 +24,7 @@ function validar(){
     document.getElementById('msgD').innerHTML = "";
   }
 
-  patron = /[0-9]{9}$/;
+  patron = /^[679][0-9]{8}$/;
 
   if (!patron.test(tel)) {
     document.getElementById('msgTel').innerHTML = "Telefono incorrecto";
@@ -33,7 +33,7 @@ function validar(){
     document.getElementById('msgTel').innerHTML = "";
   }
 
-  patron = /^(\+34)?[0-9]{9}$/; // poner la barra diagonal antes del + para que no lo coja como especial
+  patron = /^(\+34)?[679][0-9]{8}$/; // poner la barra diagonal antes del + para que no lo coja como especial
 
   if (!patron.test(telInt)) {
     document.getElementById('msgTelInt').innerHTML = "Telefono incorrecto";
@@ -51,7 +51,7 @@ function validar(){
     document.getElementById('msgFech').innerHTML = "";
   }
 
-  patron = /[0-9]{5}$/;
+  patron = /^\d{5}$/;
 
   if (!patron.test(CP)) {
     document.getElementById('msgCP').innerHTML = "Codigo postal incorrecto";
@@ -60,7 +60,7 @@ function validar(){
     document.getElementById('msgCP').innerHTML = "";
   }
 
-  patron = /\w+\@\w+\.\w+$/;
+  patron = /^\w+\@\w+\.\[A-Za-z]{2,3}$/;
 
   if (!patron.test(email)) {
     document.getElementById('msgE').innerHTML = "email incorrecto";
@@ -69,19 +69,17 @@ function validar(){
     document.getElementById('msgE').innerHTML = "";
   }
 
-  patron = /\d+$/;
-  patron2 = /\d+\,\d{1,2}$/;
+  patron = /^(\-?)\d+([.,]?\d+)$/; // el caracter \ obliga
 
   if (!patron.test(importe)) {
-    if (!patron2.test(importe)) {
+
       document.getElementById('msgImp').innerHTML = "importe incorrecto";
       esCorrecto = false;
     } else {
       document.getElementById('msgImp').innerHTML = "";
     }
-  }
 
-  patron = /^(ES)\d{16}$/;
+  patron = /^(ES)\d{2}\s\d{4}\s\d{2}\s\d{10}$/;
 
   if (!patron.test(banco)) {
     document.getElementById('msgBank').innerHTML = "cuenta bancaria incorrecta";
@@ -90,7 +88,7 @@ function validar(){
     document.getElementById('msgBank').innerHTML = "";
   }
 
-  patron = /^(w){3}\.\w+\.\w+$/;
+  patron = /^(w){3}\.\w+\.[A-Za-z]{2,3}$/;
 
   if (!patron.test(WEB)) {
     document.getElementById('msgWeb').innerHTML = "web incorrecta";
@@ -99,9 +97,7 @@ function validar(){
     document.getElementById('msgWeb').innerHTML = "";
   }
 
-  patron = /^(http:www)\.\w+\.\w+\:\d+$/;
-
-  URL = URL.replace('//',"");
+  patron = /^http[s]?\:\/\/\w{3}\.\w+\.[A-Za-z]{2,3}\:\d{1,5}$/;
 
   if (!patron.test(URL)) {
     document.getElementById('msgLink').innerHTML = "URL incorrecta";
@@ -110,10 +106,7 @@ function validar(){
     document.getElementById('msgLink').innerHTML = "";
   }
 
-  patron = /^(http:www)\.\w+\.\w+\:\d+\w+\=\w+\&\w+\=\w+$/;
-
-  Webcomp = Webcomp.replace('//',"");
-  Webcomp = Webcomp.replace('?',"");
+  patron = /^http[s]?\:\/\/\w{3}\.\w+\.[A-Za-z]{2,3}\:\d{1,5}\?(\w+=\w+)(\&\w+=\w+)*$/; // el = no hace falta escaparlo
 
   if (!patron.test(Webcomp)) {
     document.getElementById('msgWebC').innerHTML = "URL incorrecta";
