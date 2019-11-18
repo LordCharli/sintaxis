@@ -1,0 +1,3 @@
+function purga(n) {
+
+}

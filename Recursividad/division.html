@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="js/division.js"></script>
+        <title>Divisiont</title>
+    </head>
+    <body>
+        Dividendo <input type="text" name="dividendo" id="dividendo" size="5"><br><br>
+        Divisor <input type="text" name="divisor" id="divisor" size="5"><br><br>
+
+        <input type="submit" name="calcular" id="calcular" value="calcular" onclick="dividir((document.getElementById('dividendo').value),
+        (document.getElementById('divisor').value))">
+
+        <p id="retorno"></p>
+    </body>
+</html>
