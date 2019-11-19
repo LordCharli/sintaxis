@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Carrito</title>
+        <script src="js/carritoV2.js"></script>
+    </head>
+
+    <body>
+        <form>
+            Nombre <input type="text" name="nombre" id="nombre"><br>
+            Precio <input type="text" name="precio" id="precio"><br>
+        </form>
+        <input type="submit" name="añadir" id="añadir" value="añadir" onclick="aniadirCarrito();">
+        <input type="submit" name="mostrar" id="mostrar" value="mostrar" onclick="mostrar();">
+        <p id="salida"></p>
+    </body>
+</html>
